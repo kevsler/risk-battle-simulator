@@ -2,7 +2,7 @@
 
 
         var app = new Vue({
-            mixins: [VueStore.App],
+            mixins: [VueApp],
             el: '#app-main'
         });
 

@@ -1,4 +1,4 @@
-    VueStore.App = {
+    var VueApp = {
 
         // TODO Create a 'battle' component for rendering
         // the last battle log :
@@ -75,11 +75,5 @@
                     return this.battles[index];
                 }
             }
-        },
-        components: {
-            'attacker-number-picker': VueStore.Components.NumberPicker,
-            'defender-number-picker': VueStore.Components.NumberPicker,
-            'battle-rounds': VueStore.Components.BattleRounds,
-            'powers-distribution': VueStore.Components.PowersDistribution
         }
-    }
+    };

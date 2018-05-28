@@ -12,7 +12,7 @@
 
         <script src="/js/battle-simulator.js"></script>
         <script src="/js/prototypes.js"></script>
-        <script src="/js/vue.store.js"></script>
+        <script src="/js/vue.components.js"></script>
         <script src="/js/vue.app.js"></script>
     </head>
     <body>
