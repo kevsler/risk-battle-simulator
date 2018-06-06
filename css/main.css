@@ -115,7 +115,7 @@ input:focus, button:focus {
     background-color: red;
 }
 
-#rounds {
+#battle {
     font-family: 'Anton';
     padding-top: 25px;
 }
