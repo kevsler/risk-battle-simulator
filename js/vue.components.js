@@ -149,3 +149,19 @@ Vue.component('powers-distribution', {
         </div>
         `
 });
+
+// BattleDisplay
+// TODO Elaborate
+Vue.component('battle-display', {
+    props: ['battle'],
+    template: `
+        <div id="battle">
+            <div class="row rounds-headers">
+                <div class="col-sm-2 text-left">Attacker's loss</div>
+                <div class="col-sm-8 text-center">Round</div>
+                <div class="col-sm-2 text-right">Defender's loss</div>
+            </div>
+            <battle-rounds v-for="(round, index) in battle.rounds" :round="round" :num="index+1" :key="index"></battle-rounds>
+        </div>
+        `
+});
