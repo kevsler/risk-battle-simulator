@@ -154,8 +154,42 @@ Vue.component('powers-distribution', {
 // TODO Elaborate
 Vue.component('battle-display', {
     props: ['battle'],
+    computed: {
+        attackerArmiesLeft: function() {
+            return (this.battle.attacker.armies - this.battle.attacker.loss);
+        },
+        defenderArmiesLeft: function() {
+            return (this.battle.defender.armies - this.battle.defender.loss);
+        },
+    },
+    methods: {
+        formatLoss: function(loss) {
+            if (loss > 0) {
+                return '-'+loss;
+            } else {
+                return loss;
+            }
+        }
+    },
     template: `
         <div id="battle">
+            <div class="battle-header">
+                <div class="row battle-losses">
+                    <div class="col-sm-2 text-left">{{formatLoss(battle.attacker.loss)}}</div>
+                    <div class="col-sm-8 text-center">Losses</div>
+                    <div class="col-sm-2 text-right">{{formatLoss(battle.defender.loss)}}</div>
+                </div>
+                <div class="row battle-survivors">
+                    <div class="col-sm-2 text-left">{{attackerArmiesLeft}}</div>
+                    <div class="col-sm-8 text-center">Survivors</div>
+                    <div class="col-sm-2 text-right">{{defenderArmiesLeft}}</div>
+                </div>
+                <div class="row battle-total">
+                    <div class="col-sm-2 text-left">/{{battle.attacker.armies}}</div>
+                    <div class="col-sm-8 text-center">Total</div>
+                    <div class="col-sm-2 text-right">{{battle.defender.armies}}\\</div>
+                </div>
+            </div>
             <div class="row rounds-headers">
                 <div class="col-sm-2 text-left">Attacker's loss</div>
                 <div class="col-sm-8 text-center">Round</div>
