@@ -174,26 +174,26 @@ Vue.component('battle-display', {
     template: `
         <div id="battle">
             <div class="battle-header">
+                <div class="row battle-total">
+                    <div class="col-sm-2 text-center">{{battle.attacker.armies}}</div>
+                    <div class="col-sm-8 text-center battle-info">Initial</div>
+                    <div class="col-sm-2 text-center">{{battle.defender.armies}}</div>
+                </div>
                 <div class="row battle-losses">
-                    <div class="col-sm-2 text-left">{{formatLoss(battle.attacker.loss)}}</div>
-                    <div class="col-sm-8 text-center">Losses</div>
-                    <div class="col-sm-2 text-right">{{formatLoss(battle.defender.loss)}}</div>
+                    <div class="col-sm-2 text-center">{{formatLoss(battle.attacker.loss)}}</div>
+                    <div class="col-sm-8 text-center battle-info">Losses</div>
+                    <div class="col-sm-2 text-center">{{formatLoss(battle.defender.loss)}}</div>
                 </div>
                 <div class="row battle-survivors">
-                    <div class="col-sm-2 text-left">{{attackerArmiesLeft}}</div>
-                    <div class="col-sm-8 text-center">Survivors</div>
-                    <div class="col-sm-2 text-right">{{defenderArmiesLeft}}</div>
-                </div>
-                <div class="row battle-total">
-                    <div class="col-sm-2 text-left">/{{battle.attacker.armies}}</div>
-                    <div class="col-sm-8 text-center">Total</div>
-                    <div class="col-sm-2 text-right">{{battle.defender.armies}}\\</div>
+                    <div class="col-sm-2 text-center">{{attackerArmiesLeft}}</div>
+                    <div class="col-sm-8 text-center battle-info">Survivors</div>
+                    <div class="col-sm-2 text-center">{{defenderArmiesLeft}}</div>
                 </div>
             </div>
             <div class="row rounds-headers">
-                <div class="col-sm-2 text-left">Attacker's loss</div>
-                <div class="col-sm-8 text-center">Round</div>
-                <div class="col-sm-2 text-right">Defender's loss</div>
+                <div class="col-sm-4 text-left">Attacker's loss</div>
+                <div class="col-sm-4 text-center">Rounds</div>
+                <div class="col-sm-4 text-right">Defender's loss</div>
             </div>
             <battle-rounds v-for="(round, index) in battle.rounds" :round="round" :num="index+1" :key="index"></battle-rounds>
         </div>
