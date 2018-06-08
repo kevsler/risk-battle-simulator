@@ -174,6 +174,9 @@ Vue.component('battle-display', {
     template: `
         <div id="battle">
             <div class="battle-header">
+                <div class="row battle-headers text-center">
+                    <div class="col-sm-12 text-center">Recap</div>
+                </div>
                 <div class="row battle-total">
                     <div class="col-sm-2 text-center">{{battle.attacker.armies}}</div>
                     <div class="col-sm-8 text-center battle-info">Initial</div>

@@ -132,7 +132,7 @@ input:focus, button:focus {
     font-size: 0.7em;
 }
 
-.rounds-headers {
+.rounds-headers, .battle-headers {
     margin-bottom: 15px;
     border: solid 1px #e9e9e9;
     padding: 10px 10px;
@@ -182,7 +182,7 @@ input:focus, button:focus {
     margin-right: 5px;
 }
 
-.rounds-headers, .row-round-info, .battle-info {
+.battle-info, .battle-headers, .rounds-headers, .row-round-info {
     color: #7c7c7c;
 }
 
